@@ -11,35 +11,55 @@
 
 <body>
 
-<nav>
-
-<a href="index.html">Home</a>
-
-<a href="previous.html">Previous Questions</a>
-
-<a href="ct11.html">Back</a>
-
-</nav>
-
 <h1>Section A Questions</h1>
 
-<div class="question">
+<div class="question-gallery">
 
-<a target="_blank" href="images/question1.JPG">
+<img src="images/question1.JPG" onclick="openImage(this)">
 
-<img src="images/question1.JPG">
+<img src="images/question2.JPG" onclick="openImage(this)">
+
+<img src="images/question3.JPG" onclick="openImage(this)">
+
+<img src="images/question4.JPG" onclick="openImage(this)">
+
+</div>
+
+<div class="viewer" id="viewer">
+
+<img id="fullImage">
+
+<a id="downloadLink">
+
+<button class="download-btn">
+
+Download Question
+
+</button>
 
 </a>
 
 </div>
 
-<br>
+<script>
 
-<a href="images/question1.JPG" download>
+function openImage(img){
 
-<button>Download Question</button>
+document.getElementById("viewer").style.display="flex";
 
-</a>
+document.getElementById("fullImage").src=img.src;
+
+document.getElementById("downloadLink").href=img.src;
+
+}
+
+document.getElementById("viewer").onclick=function(){
+
+this.style.display="none";
+
+}
+
+</script>
 
 </body>
 
