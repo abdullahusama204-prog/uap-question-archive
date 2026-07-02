@@ -8,7 +8,11 @@
 
 <title>Section A Questions</title>
 
-<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="assets/css/style.css">
+<link rel="stylesheet" href="assets/css/navbar.css">
+<link rel="stylesheet" href="assets/css/viewer.css">
+<link rel="stylesheet" href="assets/css/buttons.css">
+<link rel="stylesheet" href="assets/css/responsive.css">
 
 </head>
 
@@ -28,15 +32,15 @@
 
 <div class="question-gallery" id="gallery">
 
-<!-- নতুন Question সবসময় এখানে সবচেয়ে উপরে Add করবে -->
+<!-- নতুন Question সবসময় সবচেয়ে উপরে Add করবে -->
 
-<img src="images/question1.JPG" onclick="openImage(this)">
+<img src="assets/images/question1.JPG" onclick="openImage(this)">
 
 </div>
 
 <br>
 
-<div>
+<div class="pagination">
 
 <button onclick="prevPage()">⬅ Previous</button>
 
@@ -48,11 +52,11 @@
 
 <div class="viewer" id="viewer">
 
-<img id="fullImage">
+<img id="fullImage" alt="Question Image">
 
 <br><br>
 
-<a id="downloadLink" download>
+<a id="downloadLink" href="#" download>
 
 <button class="download-btn">
 
@@ -68,21 +72,35 @@
 
 let scale = 1;
 
+const viewer = document.getElementById("viewer");
+const fullImage = document.getElementById("fullImage");
+const downloadLink = document.getElementById("downloadLink");
+
 function openImage(img){
 
-document.getElementById("viewer").style.display="flex";
+viewer.style.display = "flex";
 
-document.getElementById("fullImage").src=img.src;
+fullImage.src = img.src;
 
-document.getElementById("downloadLink").href=img.src;
+downloadLink.href = img.src;
 
-scale=1;
+scale = 1;
 
-document.getElementById("fullImage").style.transform="scale(1)";
+fullImage.style.transform = "scale(1)";
 
 }
 
-document.getElementById("viewer").addEventListener("wheel",function(e){
+viewer.addEventListener("click",function(e){
+
+if(e.target===viewer){
+
+viewer.style.display="none";
+
+}
+
+});
+
+viewer.addEventListener("wheel",function(e){
 
 e.preventDefault();
 
@@ -102,27 +120,17 @@ scale=1;
 
 }
 
-document.getElementById("fullImage").style.transform="scale("+scale+")";
+fullImage.style.transform="scale("+scale+")";
 
 });
 
-document.getElementById("viewer").onclick=function(e){
+let imagesPerPage = 16;
 
-if(e.target.id=="viewer"){
+let currentPage = 1;
 
-this.style.display="none";
+const gallery = document.getElementById("gallery");
 
-}
-
-};
-
-let imagesPerPage=16;
-
-let currentPage=1;
-
-let gallery=document.getElementById("gallery");
-
-let images=gallery.getElementsByTagName("img");
+const images = gallery.getElementsByTagName("img");
 
 function showPage(){
 
@@ -176,9 +184,9 @@ showPage();
 
 let startDistance=0;
 
-document.getElementById("viewer").addEventListener("touchstart",function(e){
+viewer.addEventListener("touchstart",function(e){
 
-if(e.touches.length==2){
+if(e.touches.length===2){
 
 let dx=e.touches[0].clientX-e.touches[1].clientX;
 
@@ -190,9 +198,9 @@ startDistance=Math.sqrt(dx*dx+dy*dy);
 
 });
 
-document.getElementById("viewer").addEventListener("touchmove",function(e){
+viewer.addEventListener("touchmove",function(e){
 
-if(e.touches.length==2){
+if(e.touches.length===2){
 
 e.preventDefault();
 
@@ -218,7 +226,7 @@ scale=1;
 
 }
 
-document.getElementById("fullImage").style.transform="scale("+scale+")";
+fullImage.style.transform="scale("+scale+")";
 
 startDistance=currentDistance;
 
@@ -227,6 +235,9 @@ startDistance=currentDistance;
 });
 
 </script>
+<script src="assets/js/viewer.js"></script>
+<script src="assets/js/pagination.js"></script>
+<script src="assets/js/zoom.js"></script>
 
 </body>
 
