@@ -67,3 +67,45 @@ cursor:pointer;
 .gallery img:hover{
 transform:scale(1.08);
 }
+.batch{
+
+display:flex;
+flex-wrap:wrap;
+justify-content:center;
+gap:15px;
+padding:20px;
+
+}
+
+.batch a{
+
+background-color:darkblue;
+color:white;
+padding:12px 20px;
+text-decoration:none;
+border-radius:10px;
+font-size:18px;
+transition:0.4s;
+
+}
+
+.batch a:hover{
+
+background:black;
+
+}
+
+.question{
+
+display:flex;
+justify-content:center;
+padding:30px;
+
+}
+
+.question img{
+
+width:400px;
+border-radius:20px;
+
+}
