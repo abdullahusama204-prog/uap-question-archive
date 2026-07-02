@@ -13,8 +13,19 @@
 
 <h1>Section A Questions</h1>
 
-<div class="question-gallery">
+<div class="question-gallery" id="gallery">
 
+<img src="images/question1.JPG" onclick="openImage(this)">
+
+</div>
+
+<div>
+
+<button onclick="prevPage()">⬅ Previous</button>
+
+<button onclick="nextPage()">Next ➡</button>
+
+</div>
 <!-- নতুন image সবসময় উপরে add করবে -->
 
 <img src="images/question1.JPG" onclick="openImage(this)">
@@ -92,6 +103,69 @@ this.style.display="none";
 }
 
 }
+<script>
+
+let imagesPerPage=16;
+
+let currentPage=1;
+
+let gallery=document.getElementById("gallery");
+
+let images=gallery.getElementsByTagName("img");
+
+function showPage(){
+
+let start=(currentPage-1)*imagesPerPage;
+
+let end=start+imagesPerPage;
+
+for(let i=0;i<images.length;i++){
+
+if(i>=start && i<end){
+
+images[i].style.display="block";
+
+}
+
+else{
+
+images[i].style.display="none";
+
+}
+
+}
+
+}
+
+function nextPage(){
+
+let totalPages=Math.ceil(images.length/imagesPerPage);
+
+if(currentPage<totalPages){
+
+currentPage++;
+
+showPage();
+
+}
+
+}
+
+function prevPage(){
+
+if(currentPage>1){
+
+currentPage--;
+
+showPage();
+
+}
+
+}
+
+showPage();
+
+</script>
 
 </script>
 
