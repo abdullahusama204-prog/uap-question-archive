@@ -109,3 +109,17 @@ width:400px;
 border-radius:20px;
 
 }
+.question img{
+
+width:400px;
+border-radius:20px;
+transition:0.4s;
+cursor:zoom-in;
+
+}
+
+.question img:hover{
+
+transform:scale(1.2);
+
+}
