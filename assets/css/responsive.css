@@ -1,0 +1,55 @@
+/* ==========================================
+   MOBILE RESPONSIVE
+========================================== */
+
+@media (max-width:768px){
+
+.navbar{
+
+flex-direction:column;
+
+padding:15px;
+
+gap:15px;
+
+}
+
+.logo{
+
+text-align:center;
+
+}
+
+.search-box{
+
+width:100%;
+
+}
+
+.search-box input{
+
+width:100%;
+
+max-width:350px;
+
+}
+
+.nav-links{
+
+flex-wrap:wrap;
+
+justify-content:center;
+
+gap:12px;
+
+}
+
+.nav-links a{
+
+font-size:15px;
+
+padding:8px 12px;
+
+}
+
+}

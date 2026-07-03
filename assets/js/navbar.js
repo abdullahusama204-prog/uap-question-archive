@@ -1,3 +1,16 @@
-// Future Navbar Functions
+// ===============================
+// Mobile Navbar Toggle
+// ===============================
 
-console.log("Navbar Loaded");
+const menuToggle = document.getElementById("menuToggle");
+const navLinks = document.querySelector(".nav-links");
+
+if (menuToggle && navLinks) {
+
+    menuToggle.addEventListener("click", function () {
+
+        navLinks.classList.toggle("active");
+
+    });
+
+}
