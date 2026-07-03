@@ -18,13 +18,25 @@
 
 <body>
 
-<nav>
+<nav class="navbar">
 
-<a href="index.html">Home</a>
+<div class="logo">
+<a href="index.html">🎓 UAP Question Archive</a>
+</div>
 
-<a href="previous.html">Previous Questions</a>
+<div class="search-box">
+<input type="text" placeholder="Search Questions...">
+</div>
 
-<a href="ct11.html">Back</a>
+<ul class="nav-links">
+
+<li><a href="index.html">Home</a></li>
+<li><a href="previous.html">Previous Questions</a></li>
+<li><a href="gallery.html">Gallery</a></li>
+<li><a href="about.html">About</a></li>
+<li><a href="contact.html">Contact</a></li>
+
+</ul>
 
 </nav>
 
@@ -68,176 +80,10 @@
 
 </div>
 
-<script>
-
-let scale = 1;
-
-const viewer = document.getElementById("viewer");
-const fullImage = document.getElementById("fullImage");
-const downloadLink = document.getElementById("downloadLink");
-
-function openImage(img){
-
-viewer.style.display = "flex";
-
-fullImage.src = img.src;
-
-downloadLink.href = img.src;
-
-scale = 1;
-
-fullImage.style.transform = "scale(1)";
-
-}
-
-viewer.addEventListener("click",function(e){
-
-if(e.target===viewer){
-
-viewer.style.display="none";
-
-}
-
-});
-
-viewer.addEventListener("wheel",function(e){
-
-e.preventDefault();
-
-if(e.deltaY<0){
-
-scale+=0.1;
-
-}else{
-
-scale-=0.1;
-
-}
-
-if(scale<1){
-
-scale=1;
-
-}
-
-fullImage.style.transform="scale("+scale+")";
-
-});
-
-let imagesPerPage = 16;
-
-let currentPage = 1;
-
-const gallery = document.getElementById("gallery");
-
-const images = gallery.getElementsByTagName("img");
-
-function showPage(){
-
-let start=(currentPage-1)*imagesPerPage;
-
-let end=start+imagesPerPage;
-
-for(let i=0;i<images.length;i++){
-
-if(i>=start && i<end){
-
-images[i].style.display="block";
-
-}else{
-
-images[i].style.display="none";
-
-}
-
-}
-
-}
-
-function nextPage(){
-
-let totalPages=Math.ceil(images.length/imagesPerPage);
-
-if(currentPage<totalPages){
-
-currentPage++;
-
-showPage();
-
-}
-
-}
-
-function prevPage(){
-
-if(currentPage>1){
-
-currentPage--;
-
-showPage();
-
-}
-
-}
-
-showPage();
-
-let startDistance=0;
-
-viewer.addEventListener("touchstart",function(e){
-
-if(e.touches.length===2){
-
-let dx=e.touches[0].clientX-e.touches[1].clientX;
-
-let dy=e.touches[0].clientY-e.touches[1].clientY;
-
-startDistance=Math.sqrt(dx*dx+dy*dy);
-
-}
-
-});
-
-viewer.addEventListener("touchmove",function(e){
-
-if(e.touches.length===2){
-
-e.preventDefault();
-
-let dx=e.touches[0].clientX-e.touches[1].clientX;
-
-let dy=e.touches[0].clientY-e.touches[1].clientY;
-
-let currentDistance=Math.sqrt(dx*dx+dy*dy);
-
-if(currentDistance>startDistance){
-
-scale+=0.03;
-
-}else{
-
-scale-=0.03;
-
-}
-
-if(scale<1){
-
-scale=1;
-
-}
-
-fullImage.style.transform="scale("+scale+")";
-
-startDistance=currentDistance;
-
-}
-
-});
-
-</script>
 <script src="assets/js/viewer.js"></script>
 <script src="assets/js/pagination.js"></script>
 <script src="assets/js/zoom.js"></script>
+<script src="assets/js/navbar.js"></script>
 
 </body>
 

@@ -1,37 +1,102 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 
 <head>
-    <title>My First Website</title>
-  <link rel="stylesheet" href="assets/css/style.css">
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>UAP Question Archive</title>
+
+<link rel="stylesheet" href="assets/css/style.css">
+<link rel="stylesheet" href="assets/css/navbar.css">
+
 </head>
 
 <body>
 
-   <nav>
+<nav class="navbar">
 
-<a href="index.html">Home</a>
+<div class="logo">
+<a href="index.html">🎓 UAP Question Archive</a>
+</div>
 
-<a href="about.html">About</a>
+<div class="search-box">
+<input type="text" placeholder="Search Questions...">
+</div>
 
-<a href="gallery.html">Gallery</a>
+<ul class="nav-links">
 
-<a href="previous.html">Previous Questions</a>
+<li><a class="active" href="index.html">Home</a></li>
+<li><a href="previous.html">Previous Questions</a></li>
+<li><a href="gallery.html">Gallery</a></li>
+<li><a href="about.html">About</a></li>
+<li><a href="contact.html">Contact</a></li>
 
-<a href="contact.html">Contact</a>
+<li class="profile">
+<a href="#">👤</a>
+</li>
+
+</ul>
 
 </nav>
 
-<h1>UAP Photo Gallery</h1>
+<section class="hero">
 
-<p>Welcome to our UAP Batch Website</p>
+<h1>🎓 UAP Question Archive</h1>
 
-<button id="btn">Click Me</button>
+<p>
+Access Previous Questions, Study Materials and Gallery in one place.
+</p>
 
-<img src="https://picsum.photos/300/200" alt="image">
+<div class="hero-buttons">
 
+<a href="previous.html" class="primary-btn">
+📚 Previous Questions
+</a>
+
+<a href="gallery.html" class="secondary-btn">
+🖼 Gallery
+</a>
+
+</div>
+
+</section>
+<section class="features">
+
+<div class="feature-card">
+
+<h2>📚 Previous Questions</h2>
+
+<p>Browse all batches and previous exam questions.</p>
+
+<a href="previous.html">Open →</a>
+
+</div>
+
+<div class="feature-card">
+
+<h2>🖼 Gallery</h2>
+
+<p>View memorable moments and photos of UAP batches.</p>
+
+<a href="gallery.html">Open →</a>
+
+</div>
+
+<div class="feature-card">
+
+<h2>📢 Latest Updates</h2>
+
+<p>Recently uploaded questions and announcements.</p>
+
+<a href="#">Coming Soon</a>
+
+</div>
+
+</section>
 <script src="assets/js/script.js"></script>
-
+<script src="assets/js/navbar.js"></script>
 
 </body>
 

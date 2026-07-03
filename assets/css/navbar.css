@@ -1,11 +1,101 @@
-nav{
-    background-color: darkblue;
-    padding: 20px;
+/* ===== NAVBAR ===== */
+
+.navbar{
+display:flex;
+justify-content:space-between;
+align-items:center;
+padding:15px 40px;
+background:#ffffff;
+box-shadow:0 2px 15px rgba(0,0,0,.08);
+position:sticky;
+top:0;
+z-index:999;
 }
 
-nav a{
-    color: white;
-    text-decoration: none;
-    margin: 20px;
-    font-size: 20px;
+.logo a{
+font-size:26px;
+font-weight:bold;
+text-decoration:none;
+color:#0d6efd;
+}
+
+.nav-links{
+display:flex;
+list-style:none;
+gap:25px;
+margin:0;
+padding:0;
+}
+
+.nav-links a{
+text-decoration:none;
+font-size:17px;
+font-weight:600;
+color:#333;
+transition:.3s;
+padding:8px 12px;
+border-radius:8px;
+}
+
+.nav-links a:hover{
+background:#0d6efd;
+color:#fff;
+}
+/* Search Box */
+
+.search-box{
+
+flex:1;
+
+display:flex;
+
+justify-content:center;
+
+}
+
+.search-box input{
+
+width:300px;
+
+padding:10px 15px;
+
+border:1px solid #ddd;
+
+border-radius:30px;
+
+font-size:16px;
+
+outline:none;
+
+transition:.3s;
+
+}
+
+.search-box input:focus{
+
+border-color:#0d6efd;
+
+box-shadow:0 0 10px rgba(13,110,253,.25);
+
+}
+/* Profile */
+
+.profile a{
+
+font-size:22px;
+
+padding:8px 12px;
+
+border-radius:50%;
+
+transition:.3s;
+
+}
+
+.profile a:hover{
+
+background:#0d6efd;
+
+color:white;
+
 }
