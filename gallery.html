@@ -2,8 +2,10 @@
 <html lang="en">
 
 <head>
+
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <title>Gallery</title>
 
 <link rel="stylesheet" href="assets/css/style.css">
@@ -21,8 +23,12 @@
 </div>
 
 <div class="search-box">
-<input type="text" id="searchInput" placeholder="Search Questions...">
+<input
+type="text"
+id="searchInput"
+placeholder="Search Questions...">
 </div>
+
 <div class="menu-toggle" id="menuToggle">
 ☰
 </div>
@@ -31,37 +37,96 @@
 
 <li><a href="index.html">Home</a></li>
 <li><a href="previous.html">Previous Questions</a></li>
-<li><a href="gallery.html">Gallery</a></li>
+<li><a class="active" href="gallery.html">Gallery</a></li>
 <li><a href="about.html">About</a></li>
 <li><a href="contact.html">Contact</a></li>
 
 </ul>
 
 </nav>
-<h1>My Gallery 📸</h1>
 
-<div class="gallery">
+<section class="page-hero">
 
-<img src="https://picsum.photos/id/10/300/300">
+<h1>📸 UAP Photo Gallery</h1>
 
-<img src="https://picsum.photos/id/20/300/300">
+<p>
 
-<img src="https://picsum.photos/id/30/300/300">
+Explore memorable moments from different batches,
+events and university activities.
 
-<img src="https://picsum.photos/id/40/300/300">
+</p>
 
-<img src="https://picsum.photos/id/50/300/300">
+</section>
 
-<img src="https://picsum.photos/id/60/300/300">
+<div class="gallery-container">
+
+<div class="gallery-card">
+
+<img src="assets/images/gallery1.jpg" alt="Batch 1.1">
+
+<div class="gallery-info">
+
+<h3>Batch 1.1 Orientation</h3>
+
+<p>2026 Memories</p>
 
 </div>
+
+</div>
+
+<div class="gallery-card">
+
+<img src="assets/images/gallery2.jpg" alt="Batch 1.2">
+
+<div class="gallery-info">
+
+<h3>Batch 1.2 Campus Life</h3>
+
+<p>Student Activities</p>
+
+</div>
+
+</div>
+
+<div class="gallery-card">
+
+<img src="assets/images/gallery3.jpg" alt="Batch 2.1">
+
+<div class="gallery-info">
+
+<h3>Batch 2.1</h3>
+
+<p>Seminar Program</p>
+
+</div>
+
+</div>
+
+<div class="gallery-card">
+
+<img src="assets/images/gallery4.jpg" alt="Batch 2.2">
+
+<div class="gallery-info">
+
+<h3>Batch 2.2</h3>
+
+<p>Workshop</p>
+
+</div>
+
+</div>
+
+</div>
+<div class="viewer" id="viewer">
+
+<img id="fullImage" alt="Gallery Image">
+
+</div>
+
 <script src="assets/js/navbar.js"></script>
 <script src="assets/js/search.js"></script>
-
 <script src="assets/js/footer.js"></script>
-
-</body>
-</html>
+<script src="assets/js/gallery.js"></script>
 
 </body>
 

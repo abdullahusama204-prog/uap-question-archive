@@ -2,23 +2,26 @@
 // Search System
 // ===============================
 
-console.log("Search JS Loaded");
+document.addEventListener("DOMContentLoaded", () => {
 
-const searchInput = document.getElementById("searchInput");
+    console.log("Search JS Loaded");
 
-if (searchInput) {
+    const searchInput = document.getElementById("searchInput");
+
+    if (!searchInput) {
+        console.log("Search Input NOT Found");
+        return;
+    }
 
     console.log("Search Input Found");
 
     searchInput.addEventListener("input", function () {
 
-        console.log("Typing:", this.value);
-
         const value = this.value.toLowerCase().trim();
 
         const cards = document.querySelectorAll(".batch-card");
 
-        cards.forEach(function(card) {
+        cards.forEach(card => {
 
             const text = card.textContent.toLowerCase();
 
@@ -32,8 +35,4 @@ if (searchInput) {
 
     });
 
-} else {
-
-    console.log("Search Input NOT Found");
-
-}
+});

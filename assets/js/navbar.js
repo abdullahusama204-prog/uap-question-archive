@@ -1,16 +1,48 @@
 // ===============================
-// Mobile Navbar Toggle
+// Professional Navbar
 // ===============================
 
-const menuToggle = document.getElementById("menuToggle");
-const navLinks = document.querySelector(".nav-links");
+document.addEventListener("DOMContentLoaded", () => {
 
-if (menuToggle && navLinks) {
+    const menuToggle = document.getElementById("menuToggle");
+    const navLinks = document.querySelector(".nav-links");
 
-    menuToggle.addEventListener("click", function () {
+    // Navbar না থাকলে কোনো Error হবে না
+    if (!menuToggle || !navLinks) return;
+
+    // Mobile Menu Toggle
+    menuToggle.addEventListener("click", () => {
 
         navLinks.classList.toggle("active");
 
     });
 
-}
+    // Mobile-এ Link-এ Click করলে Menu Close হবে
+    const navItems = document.querySelectorAll(".nav-links a");
+
+    navItems.forEach(item => {
+
+        item.addEventListener("click", () => {
+
+            if (window.innerWidth <= 768) {
+
+                navLinks.classList.remove("active");
+
+            }
+
+        });
+
+    });
+
+    // Desktop-এ Resize করলে Menu Reset হবে
+    window.addEventListener("resize", () => {
+
+        if (window.innerWidth > 768) {
+
+            navLinks.classList.remove("active");
+
+        }
+
+    });
+
+});
